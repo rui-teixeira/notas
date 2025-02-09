@@ -22,3 +22,14 @@ def generate_dummy_grades(num_exams: int, num_questions: int, seed: int = None) 
     grades = np.random.randint(0, 2, (num_exams, num_questions)).tolist()
     return grades
 
+def sum_columns(matrix):
+    """
+    Sums the values of each column in a list of lists (matrix).
+
+    Parameters:
+        matrix (list of list of int): The matrix to sum columns from.
+
+    Returns:
+        list of int: A list containing the sum of each column.
+    """
+    return [sum(col) for col in zip(*matrix)]
